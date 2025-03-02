@@ -19,10 +19,10 @@ app.post('/api/payment', async (req, res) => {
     OutSum: amount,
     Description: 'Payment for services',
     Email: email,
-    // Other optional parameters as needed
+    
   };
 
-  // Calculate the signature
+  // Рассчитываем сигнатуру подписи
   const signatureValue = CryptoJS.MD5(`${login}:${amount}:${password1}:Email=${email}`).toString();
 
   data.SignatureValue = signatureValue;
